@@ -1,5 +1,5 @@
 
-package seminar1;
+// package seminar1;
 
 import java.util.Arrays;
 

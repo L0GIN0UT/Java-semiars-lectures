@@ -18,6 +18,7 @@ public class selfcontrol_2_write {
         } catch (IOException ex){
             System.out.println(ex.getMessage());
         }
+           // 4*x^2 --> *x^2 --> a = 4
            
     }
 
