@@ -2,11 +2,14 @@ public class Task4 {
     // *На шахматной доске расставить
     // 8 ферзей так, чтобы они не били друг друга.
 
+    // Проверка на то можем ли мы поставить королеву
     private static boolean canPlaceQueen(int[][] chessField, int col) {
+
         if (col >= size) {
             return true;
         }
 
+        // цикл для размещения
         for (int i = 0; i < size; i++) {
             if (dontCross(chessField, i, col)) {
                 // размещаем
@@ -22,22 +25,23 @@ public class Task4 {
         return false;
     }
 
+    // Проверка на условия (бьёт/не бьёт) по всем направлениям
     private static boolean dontCross(int[][] chessField, int row, int col) {
-        // Проверка по горизонтали
+
         for (int i = 0; i < col; i++) {
             if (chessField[row][i] == 1) {
                 return false;
             }
         }
 
-        // Проверка по диагонали ↖
+
         for (int i = row, j = col; i >= 0 && j >= 0; i--, j--) {
             if (chessField[i][j] == 1) {
                 return false;
             }
         }
 
-       // Проверка по диагонали ↗
+
         for (int i = row, j = col; i < size && j >= 0; i++, j--) {
             if (chessField[i][j] == 1) {
                 return false;
@@ -47,6 +51,7 @@ public class Task4 {
         return true;
     }
 
+    // Метод печати 4 зеркальных решений
     private static void printBoard(int[][] board) {
         System.out.println("4 Зеркальных решения: ");
         System.out.println("Решение 1");
