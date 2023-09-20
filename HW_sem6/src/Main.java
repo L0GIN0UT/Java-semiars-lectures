@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        Set<Notebook> all = generate(40);
+        Set<Notebook> all = generate(1000);
         int choise = 0;
         while (choise != 8){
             choise = printForChoise();
@@ -14,8 +14,13 @@ public class Main {
                 all = sorted(all, character);
             }
         }
-        System.out.println("Ваш список отсортированных ноутбуков:");
-        printSet(all);
+        if(all.isEmpty()){
+            System.out.println("Нам не удалось найти ноутбук с такими хар-ми");
+        }
+        else {
+            System.out.println("По вашему запросу удалось найти:");
+            printSet(all);
+        }
     }
 
     static Set<Notebook> generate(int amount){
@@ -74,10 +79,6 @@ public class Main {
     }
 
     static int printForChoise() {
-        for(int i = 0; i < 15; i++) {
-            System.out.print("\n");
-        }
-
         System.out.println("Введите цифру, соответствующую необходимому критерию:\n" +
                 "1 - Компания\n" +
                 "2 - Цвет\n" +
@@ -93,6 +94,9 @@ public class Main {
             System.out.println("Введите ваш выбор: ");
             int input = scanner.nextInt();
             if (input > 0 && input < 9){
+                for(int i = 0; i < 15; i++) {
+                    System.out.print("\n");
+                }
                 return input;
             }
         }

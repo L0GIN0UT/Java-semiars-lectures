@@ -6,8 +6,8 @@ public class Notebook {
     public String toString() {
 
 
-        return "Компания: " + company + " Цвет: " + color + " Resolution: " + resolution +
-                " ЖД: " + HDD + "GB OС: " + OS + " Поколение ОП: " + RAM_generation +
-                " Объём ОП: " + RAM + "GB";
+        return String.format("Компания: %s Цвет: %s Разрешение экрана: %s Объём ЖД:" +
+                " %s GB OС: %s Поколение ОП: %s Объём ОП: %s GB",
+                company, color, resolution, OS, RAM_generation,RAM, HDD);
     }
 }
