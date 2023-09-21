@@ -51,24 +51,35 @@ public class Main {
     }
 
 
-    static Set<Notebook> sorted(Set<Notebook> all, String scan){
+    static Set<Notebook> sorted(Set<Notebook> temp, String scan){
         Set<Notebook> sortedAll = new HashSet<>();
-        for(Notebook notebook: all){
+        int counter = 0;
+        for(Notebook notebook: temp){
             if(notebook.HDD.equals(scan)){
                 sortedAll.add(notebook);
+                counter++;
             } else if(notebook.RAM_generation.equals(scan)){
                 sortedAll.add(notebook);
+                counter++;
             } else if (notebook.RAM.equals(scan)){
                 sortedAll.add(notebook);
+                counter++;
             } else if (notebook.resolution.equals(scan)){
                 sortedAll.add(notebook);
+                counter++;
             } else if (notebook.color.equals(scan)) {
                 sortedAll.add(notebook);
+                counter++;
             } else if (notebook.company.equals(scan)) {
                 sortedAll.add(notebook);
+                counter++;
             } else if (notebook.OS.equals(scan)) {
                 sortedAll.add(notebook);
+                counter++;
             }
+        }
+        if(counter == 0){
+            return temp;
         }
         return sortedAll;
     }
@@ -94,7 +105,7 @@ public class Main {
             System.out.println("Введите ваш выбор: ");
             int input = scanner.nextInt();
             if (input > 0 && input < 9){
-                for(int i = 0; i < 15; i++) {
+                for(int i = 0; i < 13; i++) {
                     System.out.print("\n");
                 }
                 return input;
